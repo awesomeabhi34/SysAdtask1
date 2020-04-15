@@ -1,12 +1,6 @@
 
 #!/bin/bash
 
-#adding three groups
-sudo groupadd Army
-sudo groupadd Navy
-sudo groupadd Airforce
-sudo groupadd Cheif
-
 #creating users
 sudo useradd CheifCommander -m -s /bin/bash -g Cheif
 sudo useradd ArmyGeneral -m -s /bin/bash -g Army
