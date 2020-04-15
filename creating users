@@ -2,10 +2,10 @@
 #!/bin/bash
 
 #creating users
-sudo useradd CheifCommander -m -s /bin/bash -g Cheif
-sudo useradd ArmyGeneral -m -s /bin/bash -g Army
-sudo useradd NavyMarshal -m -s /bin/bash -g Navy
-sudo useradd AirForceCheif -m -s /bin/bash -g Airforce
+sudo useradd CheifCommander -m -s /bin/bash 
+sudo useradd ArmyGeneral -m -s /bin/bash 
+sudo useradd NavyMarshal -m -s /bin/bash 
+sudo useradd AirForceCheif -m -s /bin/bash 
 
 for  i in {1..50}
 do
