@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+#adding three groups
+sudo groupadd Army
+sudo groupadd Navy
+sudo groupadd Airforce
+sudo groupadd Cheif
+
+#creating users
+sudo useradd CheifCommander -m -s /bin/bash -g Cheif
+sudo useradd ArmyGeneral -m -s /bin/bash -g Army
+sudo useradd NavyMarshal -m -s /bin/bash -g Navy
+sudo useradd AirForceCheif -m -s /bin/bash -g Airforce
+
+for  i in {1..50}
+do
+        sudo useradd Army$i -m -s /bin/bash
+        sudo useradd Navy$i -m -s /bin/bash
+        sudo useradd AirForce$i -m -s /bin/bash
+done
+
+echo Users Created successfully
