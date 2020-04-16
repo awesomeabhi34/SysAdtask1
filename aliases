@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo alias userGenerate='source /home/asthana/Desktop/Linux/createuser' >> ~/.bashrc
+echo alias permit='source /home/asthana/Desktop/Linux/permission' >> ~/.bashrc
+echo alias autoSchedule='source /home/asthana/Desktop/Linux/sch' >> ~/.bashrc
+echo alias attendance='source /home/asthana/Desktop/Linux/attd' >> ~/.bashrc
+echo alias record='source /home/asthana/Desktop/Linux/rcd' >> ~/.bashrc
+
+source ~/.bashrc
+echo Aliases created
