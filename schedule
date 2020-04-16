@@ -3,22 +3,24 @@
 #downloading log file
 wget -O attendance https://inductions.delta.nitt.edu/sysad-task1-position.log
 
-#getting current date
-now=$(date)
+#getting current date for auto updation of posts
+match=$(date | cut -d " " -f 3)
+#echo $match
+
 
 #creating files and giving input
 for i in {1..50}
 do
-    #sudo touch /home/Army$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army$i" | grep "$now" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
+    sudo touch /home/Army$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army$i" | grep $match | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
     
-    #sudo touch /home/Navy$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy$i" | grep "$now" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
+    sudo touch /home/Navy$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy$i" | grep $match | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
     
-    #sudo touch /home/AirForce$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce$i" | grep "$now" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
+    sudo touch /home/AirForce$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce$i" | grep $match | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
 done
 
-#auto updation of posts remaining
+#contents still not being redirected to their repective folders
 
-echo file created
+echo Done
