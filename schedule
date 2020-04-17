@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #downloading log file
-wget -O attendance https://inductions.delta.nitt.edu/sysad-task1-position.log
+wget -O position https://inductions.delta.nitt.edu/sysad-task1-position.log
 
 #getting current date for auto updation of posts
 match=$(date | cut -d " " -f 3)
@@ -12,13 +12,15 @@ match=$(date | cut -d " " -f 3)
 for i in {1..50}
 do
     sudo touch /home/Army$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/position | grep -w "Army$i" | grep -w "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
     
     sudo touch /home/Navy$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/position | grep -w "Navy$i" | grep -w "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
     
     sudo touch /home/AirForce$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/position | grep -w "AirForce$i" | grep -w "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
 done
+
+#month still a problem
 
 echo Done
