@@ -12,15 +12,13 @@ match=$(date | cut -d " " -f 3)
 for i in {1..50}
 do
     sudo touch /home/Army$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army$i" | grep $match | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
     
     sudo touch /home/Navy$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy$i" | grep $match | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
     
     sudo touch /home/AirForce$i/post_alloted
-    sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce$i" | grep $match | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
+    sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce$i" | grep "^+2020-04-$match-00.00.00" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
 done
-
-#contents still not being redirected to their repective folders
 
 echo Done
