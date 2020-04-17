@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#downloading attendance file
+wget -O attendance https://inductions.delta.nitt.edu/sysad-task1-attendance.log
+
+#creating files
+sudo touch /home/ArmyGeneral/attendance_record
+sudo touch /home/NavyMarshal/attendance_record
+sudo touch /home/AirForceCheif/attendance_record
+
+#getting date
+match=$(date "+%Y-%m-%d")
+#echo $match
+
+#getting list of soldiers present
+
+sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 > /home/ArmyGeneral/attendance_record
+sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 > /home/ArmyGeneral/attendance_record
+
+sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce" | grep "^+$match" | grep -w "YES" | cut -d -f2,3 > /home/ArmyGeneral/attendance_record
+
+
+#c=$(cat /home/asthana/Desktop/Linux/attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -$
+#echo -e "$c\n"
+
+echo Done
