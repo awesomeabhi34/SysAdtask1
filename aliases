@@ -5,6 +5,8 @@ echo alias permit='source /home/asthana/Desktop/Linux/permission' >> ~/.bashrc
 echo alias autoSchedule='source /home/asthana/Desktop/Linux/sch' >> ~/.bashrc
 echo alias attendance='source /home/asthana/Desktop/Linux/attd' >> ~/.bashrc
 echo alias record='source /home/asthana/Desktop/Linux/rcd' >> ~/.bashrc
+echo alias finalattendance='source /home/asthana/Desktop/Linux/fattd' >> ~/.bashrc
+echo alias nearest='source /home/asthana/Desktop/Linux/near' >> ~/.bashrc
 
 source ~/.bashrc
 echo Aliases created
