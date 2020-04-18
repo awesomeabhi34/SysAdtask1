@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "Enter your fleet: " f
+read -p "Enter: " m n
+
+let "d = 14 - $n"
+#echo $d
+match=$(date --date="$d days ago" "+%Y-%m-%d")
+
+echo "Attendace record for $f on  $match"
+echo "===================================="
+
+d=$(cat /home/asthana/Desktop/Linux/attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3)
+echo -e "$d\n"
+
+echo Done
+
