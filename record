@@ -3,15 +3,21 @@
 read -p "Enter your fleet: " f
 read -p "Enter: " m n
 
-let "d = 14 - $n"
-#echo $d
-match=$(date --date="$d days ago" "+%Y-%m-%d")
+#only 7 days in a week
+if [ $n -ge 1 ] && [ $n -le 7 ]
+then
+        let "d = 14 - $n"
+        #echo $d
+        match=$(date --date="$d days ago" "+%Y-%m-%d")
+        echo "Attendace record for $f on  $match"
+        echo "===================================="
 
-echo "Attendace record for $f on  $match"
-echo "===================================="
+        d=$(cat /home/asthana/Desktop/Linux/attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3)
+        echo -e "$d\n"
+else
+        echo Invalid input
+fi
 
-d=$(cat /home/asthana/Desktop/Linux/attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3)
-echo -e "$d\n"
 
 echo Done
 
