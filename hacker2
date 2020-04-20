@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#creating file
+sudo touch /home/CheifCommander/nearest10
+
+
+#getting position of present soldiers
+diff -y attendance position | grep YES > prac3
+
+
+#getting the date, name and  N and E cordinates in a single file
+c=$(awk '{print $1, $2,$7,$8}' prac3 | sed 's/N°//' | sed 's/E°//') 
+echo -e "$c\n" > prac4
+
+
+#using the distance formula and getting top 10 nearest
+awk '{print $1,$2,((($3 - 28.7041) ^ 2) + (($4 - 77.1025) ^ 2)) }' prac4  > prac5
+sudo cat prac5 |sort -k3 -n | head > /home/CheifCommander/nearest10
+
