@@ -12,7 +12,7 @@ then
         echo "Attendace record for $f on  $match"
         echo "===================================="
 
-        d=$(cat /home/asthana/Desktop/Linux/attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3)
+        d=$(cat /home/asthana/Desktop/Linux/attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3 | column -t)
         echo -e "$d\n"
 else
         echo Invalid input
