@@ -18,6 +18,4 @@ sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army" | grep "^+$match" 
 sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/NavyMarshal/attendance_record
 sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce" | grep "^+$match" | grep -w "YES" | cut -d -f2,3 | column -t > /home/AirForceCheif/attendance_record
 
-#updation of list at 6 am is remaining
-
 echo Done
