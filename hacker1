@@ -8,7 +8,7 @@ do
         echo " " >> /home/CheifCommander/attendance_report
         echo $fleet >> /home/CheifCommander/attendance_report
         echo " " >> /home/CheifCommander/attendance_report
-        sudo cat /home/asthana/Desktop/Linux/attendance | grep $fleet | column -t >> /home/CheifCommander/attendance_report
+        sudo attendance | grep $fleet | column -t >> /home/CheifCommander/attendance_report
 done
 echo Done
 
