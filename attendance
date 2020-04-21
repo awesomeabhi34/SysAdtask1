@@ -14,8 +14,8 @@ match=$(date "+%Y-%m-%d")
 
 #getting list of soldiers present
 
-sudo cat /home/asthana/Desktop/Linux/attendance | grep "Army" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/ArmyGeneral/attendance_record
-sudo cat /home/asthana/Desktop/Linux/attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/NavyMarshal/attendance_record
-sudo cat /home/asthana/Desktop/Linux/attendance | grep "AirForce" | grep "^+$match" | grep -w "YES" | cut -d -f2,3 | column -t > /home/AirForceCheif/attendance_record
+sudo cat attendance | grep "Army" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/ArmyGeneral/attendance_record
+sudo cat attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/NavyMarshal/attendance_record
+sudo cat attendance | grep "AirForce" | grep "^+$match" | grep -w "YES" | cut -d -f2,3 | column -t > /home/AirForceCheif/attendance_record
 
 echo Done
