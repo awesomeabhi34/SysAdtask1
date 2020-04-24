@@ -3,25 +3,25 @@
 #permission for army general, navy marhsal and airforce chief
 for i in {1..50}
 do 
-        sudo setfacl -m u:ArmyGeneral:rwx -R /home/Army$i
-        sudo setfacl -m u:NavyMarshal:rwx -R /home/Navy$i
-        sudo setfacl -m u:AirForceCheif:rwx -R /home/AirForce$i
+        setfacl -m u:ArmyGeneral:rwx -R /home/Army$i
+        setfacl -m u:NavyMarshal:rwx -R /home/Navy$i
+        setfacl -m u:AirForceCheif:rwx -R /home/AirForce$i
 done
 
 #permissions for cheif commander
-sudo setfacl -m u:CheifCommander:rwx -R /home/ArmyGeneral
-sudo setfacl -m u:CheifCommander:rwx -R /home/NavyMarshal
-sudo setfacl -m u:CheifCommander:rwx -R /home/AirForceCheif
+setfacl -m u:CheifCommander:rwx -R /home/ArmyGeneral
+setfacl -m u:CheifCommander:rwx -R /home/NavyMarshal
+setfacl -m u:CheifCommander:rwx -R /home/AirForceCheif
 for j in {1..50}
 do
-        sudo setfacl -m u:CheifCommander:rwx -R /home/Army$j
-        sudo setfacl -m u:CheifCommander:rwx -R /home/Navy$j
-        sudo setfacl -m u:CheifCommander:rwx -R /home/AirForce$j
+        setfacl -m u:CheifCommander:rwx -R /home/Army$j
+        setfacl -m u:CheifCommander:rwx -R /home/Navy$j
+        setfacl -m u:CheifCommander:rwx -R /home/AirForce$j
 done
 
 for k in {1..50}
 do
-        sudo chmod o-rx /home/Army$k
-        sudo chmod o-rx /home/Navy$k
-        sudo chmod o-rx /home/AirForce$k
+        chmod o-rx /home/Army$k
+        chmod o-rx /home/Navy$k
+        chmod o-rx /home/AirForce$k
 done
