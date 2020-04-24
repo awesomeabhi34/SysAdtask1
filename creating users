@@ -2,16 +2,16 @@
 #!/bin/bash
 
 #creating users
-sudo useradd CheifCommander -m -s /bin/bash 
-sudo useradd ArmyGeneral -m -s /bin/bash 
-sudo useradd NavyMarshal -m -s /bin/bash 
-sudo useradd AirForceCheif -m -s /bin/bash 
+useradd CheifCommander -m -s /bin/bash 
+useradd ArmyGeneral -m -s /bin/bash 
+useradd NavyMarshal -m -s /bin/bash 
+useradd AirForceCheif -m -s /bin/bash 
 
 for  i in {1..50}
 do
-        sudo useradd Army$i -m -s /bin/bash
-        sudo useradd Navy$i -m -s /bin/bash
-        sudo useradd AirForce$i -m -s /bin/bash
+        useradd Army$i -m -s /bin/bash
+        useradd Navy$i -m -s /bin/bash
+        useradd AirForce$i -m -s /bin/bash
 done
 
 echo Users Created successfully
