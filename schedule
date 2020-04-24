@@ -10,14 +10,14 @@ match=$(date "+%Y-%m-%d")
 #creating files and giving input
 for i in {1..50}
 do
-    sudo touch /home/Army$i/post_alloted
-    sudo cat position | grep -w "Army$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
+    touch /home/Army$i/post_alloted
+    cat position | grep -w "Army$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/Army$i/post_alloted
     
-    sudo touch /home/Navy$i/post_alloted
-    sudo cat position | grep -w "Navy$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
+    touch /home/Navy$i/post_alloted
+    cat position | grep -w "Navy$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/Navy$i/post_alloted
     
-    sudo touch /home/AirForce$i/post_alloted
-    sudo cat position | grep -w "AirForce$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
+    touch /home/AirForce$i/post_alloted
+    cat position | grep -w "AirForce$i" | grep -w "^+$match" | cut -d " " -f 1,4,5 > /home/AirForce$i/post_alloted
 done
 
 #month still a problem
