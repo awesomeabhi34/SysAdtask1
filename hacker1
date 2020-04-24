@@ -1,14 +1,14 @@
 
 #!/bin/bash
 
-sudo touch /home/CheifCommander/attendance_report
+touch /home/CheifCommander/attendance_report
 
 for fleet in Army Navy AirForce
 do
         echo " " >> /home/CheifCommander/attendance_report
         echo $fleet >> /home/CheifCommander/attendance_report
         echo " " >> /home/CheifCommander/attendance_report
-        sudo attendance | grep $fleet | column -t >> /home/CheifCommander/attendance_report
+        cat attendance | grep $fleet | column -t >> /home/CheifCommander/attendance_report
 done
 echo Done
 
