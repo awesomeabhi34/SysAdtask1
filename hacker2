@@ -5,15 +5,15 @@ touch /home/CheifCommander/nearest10
 
 
 #getting position of present soldiers
-diff -y attendance position | grep YES > prac3
+diff -y attendance position | grep YES > sortfile1
 
 
 #getting the date, name and  N and E cordinates in a single file
-c=$(awk '{print $1, $2,$7,$8}' prac3 | sed 's/N°//' | sed 's/E°//') 
-echo -e "$c\n" > prac4
+temp1=$(awk '{print $1, $2,$7,$8}' sortfile1 | sed 's/N°//' | sed 's/E°//') 
+echo -e "$temp1\n" > sortfile2
 
 
 #using the distance formula and getting top 10 nearest
-awk '{print $1,$2,((($3 - 28.7041) ^ 2) + (($4 - 77.1025) ^ 2)) }' prac4  > prac5
-cat prac5 |sort -k3 -n | column -t | head > /home/CheifCommander/nearest10
+awk '{print $1,$2,((($3 - 28.7041) ^ 2) + (($4 - 77.1025) ^ 2)) }' sortfile2  > sortfile3
+cat sortfile3 |sort -k3 -n | column -t | head > /home/CheifCommander/nearest10
 
