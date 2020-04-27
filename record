@@ -1,19 +1,18 @@
 #!/bin/bash
 
-read -p "Enter your fleet: " f
-read -p "Enter: " m n
+read -p "Enter your fleet: " fleet
+read -p "Enter: " record day
 
 #only 7 days in a week
-if [ $n -ge 1 ] && [ $n -le 7 ]
+if [ $day -ge 1 ] && [ $day -le 7 ]
 then
-        let "d = 14 - $n"
-        #echo $d
-        match=$(date --date="$d days ago" "+%Y-%m-%d")
-        echo "Attendace record for $f on  $match"
+        let "dayofweek = 14 - $day"
+        matchitem=$(date --date="$dayofweek days ago" "+%Y-%m-%d")
+        echo "Attendace record for $fleet on  $matchitem"
         echo "===================================="
 
-        d=$(cat attendance | grep "^+$match" | grep "$f"| cut -d " " -f 2,3 | column -t)
-        echo -e "$d\n"
+        output=$(cat attendance | grep "^+$matchitem" | grep "$fleet"| cut -d " " -f 2,3 | column -t)
+        echo -e "$output\n"
 else
         echo Invalid input
 fi
