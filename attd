@@ -9,13 +9,13 @@ touch /home/NavyMarshal/attendance_record
 touch /home/AirForceCheif/attendance_record
 
 #getting date
-match=$(date "+%Y-%m-%d")
+matchitem=$(date "+%Y-%m-%d")
 #echo $match
 
 #getting list of soldiers present
 
-cat attendance | grep "Army" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/ArmyGeneral/attendance_record
-cat attendance | grep "Navy" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/NavyMarshal/attendance_record
-cat attendance | grep "AirForce" | grep "^+$match" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/AirForceCheif/attendance_record
+cat attendance | grep "Army" | grep "^+$matchitem" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/ArmyGeneral/attendance_record
+cat attendance | grep "Navy" | grep "^+$matchitem" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/NavyMarshal/attendance_record
+cat attendance | grep "AirForce" | grep "^+$matchitem" | grep -w "YES" | cut -d " " -f2,3 | column -t > /home/AirForceCheif/attendance_record
 
 echo Done
