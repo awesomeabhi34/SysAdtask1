@@ -4,7 +4,6 @@
 #creating users
 useradd CheifCommander -m -s /bin/bash 
 useradd ArmyGeneral -m -s /bin/bash 
-useradd NavyMarshal -m -s /bin/bash 
 useradd AirForceCheif -m -s /bin/bash 
 
 for  i in {1..50}
